@@ -1,0 +1,11 @@
+<div>
+    <button #startCast type="button" (click)="startCasting()" [disabled]="isStreaming">Start Casting</button>
+    <button #stopCast type="button" (click)="stopCasting()" [disabled]="!isStreaming"> Stop Casting</button>
+    <div>
+      <button *ngFor="let streamCaster of streamCasters" (click)="viewStreaming(streamCaster)">View streaming of {{streamCaster}}</button>
+    </div>
+    <video #video autoplay="true" webkit-playsinline="true" controls
+    playsinline="true"
+    muted="muted">
+    </video>
+</div>
